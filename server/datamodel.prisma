@@ -1,0 +1,5 @@
+type Champion {
+  id: ID! @id
+  name: String!
+  publicId: String!
+}

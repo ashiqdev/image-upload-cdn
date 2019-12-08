@@ -1,0 +1,8 @@
+# import * from './generated/prisma.graphql'
+type Mutation {
+  createChampion(name:String!, publicId:String!): Champion!
+}
+
+type Query {
+  champion(where: ChampionWhereUniqueInput!): Champion
+}
