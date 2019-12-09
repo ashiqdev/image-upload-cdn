@@ -1,7 +1,7 @@
 # source: https://us1.prisma.sh/ashiqur-rahman/image-upload/dev
-# timestamp: Sun Dec 08 2019 13:26:06 GMT+0600 (+06)
+# timestamp: Sun Dec 08 2019 22:54:58 GMT+0600 (+06)
 
-type AggregateChampion {
+type AggregateImage {
   count: Int!
 }
 
@@ -10,68 +10,68 @@ type BatchPayload {
   count: Long!
 }
 
-type Champion implements Node {
+type Image implements Node {
   id: ID!
-  name: String!
-  publicId: String!
+  original: String!
+  w200: String!
 }
 
 """A connection to a list of items."""
-type ChampionConnection {
+type ImageConnection {
   """Information to aid in pagination."""
   pageInfo: PageInfo!
 
   """A list of edges."""
-  edges: [ChampionEdge]!
-  aggregate: AggregateChampion!
+  edges: [ImageEdge]!
+  aggregate: AggregateImage!
 }
 
-input ChampionCreateInput {
+input ImageCreateInput {
   id: ID
-  name: String!
-  publicId: String!
+  original: String!
+  w200: String!
 }
 
 """An edge in a connection."""
-type ChampionEdge {
+type ImageEdge {
   """The item at the end of the edge."""
-  node: Champion!
+  node: Image!
 
   """A cursor for use in pagination."""
   cursor: String!
 }
 
-enum ChampionOrderByInput {
+enum ImageOrderByInput {
   id_ASC
   id_DESC
-  name_ASC
-  name_DESC
-  publicId_ASC
-  publicId_DESC
+  original_ASC
+  original_DESC
+  w200_ASC
+  w200_DESC
 }
 
-type ChampionPreviousValues {
+type ImagePreviousValues {
   id: ID!
-  name: String!
-  publicId: String!
+  original: String!
+  w200: String!
 }
 
-type ChampionSubscriptionPayload {
+type ImageSubscriptionPayload {
   mutation: MutationType!
-  node: Champion
+  node: Image
   updatedFields: [String!]
-  previousValues: ChampionPreviousValues
+  previousValues: ImagePreviousValues
 }
 
-input ChampionSubscriptionWhereInput {
+input ImageSubscriptionWhereInput {
   """Logical AND on all given filters."""
-  AND: [ChampionSubscriptionWhereInput!]
+  AND: [ImageSubscriptionWhereInput!]
 
   """Logical OR on all given filters."""
-  OR: [ChampionSubscriptionWhereInput!]
+  OR: [ImageSubscriptionWhereInput!]
 
   """Logical NOT on all given filters combined by AND."""
-  NOT: [ChampionSubscriptionWhereInput!]
+  NOT: [ImageSubscriptionWhereInput!]
 
   """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
@@ -90,28 +90,28 @@ input ChampionSubscriptionWhereInput {
   The subscription event gets only dispatched when some of the field names included in this list have been updated
   """
   updatedFields_contains_some: [String!]
-  node: ChampionWhereInput
+  node: ImageWhereInput
 }
 
-input ChampionUpdateInput {
-  name: String
-  publicId: String
+input ImageUpdateInput {
+  original: String
+  w200: String
 }
 
-input ChampionUpdateManyMutationInput {
-  name: String
-  publicId: String
+input ImageUpdateManyMutationInput {
+  original: String
+  w200: String
 }
 
-input ChampionWhereInput {
+input ImageWhereInput {
   """Logical AND on all given filters."""
-  AND: [ChampionWhereInput!]
+  AND: [ImageWhereInput!]
 
   """Logical OR on all given filters."""
-  OR: [ChampionWhereInput!]
+  OR: [ImageWhereInput!]
 
   """Logical NOT on all given filters combined by AND."""
-  NOT: [ChampionWhereInput!]
+  NOT: [ImageWhereInput!]
   id: ID
 
   """All values that are not equal to given value."""
@@ -152,89 +152,89 @@ input ChampionWhereInput {
 
   """All values not ending with the given string."""
   id_not_ends_with: ID
-  name: String
+  original: String
 
   """All values that are not equal to given value."""
-  name_not: String
+  original_not: String
 
   """All values that are contained in given list."""
-  name_in: [String!]
+  original_in: [String!]
 
   """All values that are not contained in given list."""
-  name_not_in: [String!]
+  original_not_in: [String!]
 
   """All values less than the given value."""
-  name_lt: String
+  original_lt: String
 
   """All values less than or equal the given value."""
-  name_lte: String
+  original_lte: String
 
   """All values greater than the given value."""
-  name_gt: String
+  original_gt: String
 
   """All values greater than or equal the given value."""
-  name_gte: String
+  original_gte: String
 
   """All values containing the given string."""
-  name_contains: String
+  original_contains: String
 
   """All values not containing the given string."""
-  name_not_contains: String
+  original_not_contains: String
 
   """All values starting with the given string."""
-  name_starts_with: String
+  original_starts_with: String
 
   """All values not starting with the given string."""
-  name_not_starts_with: String
+  original_not_starts_with: String
 
   """All values ending with the given string."""
-  name_ends_with: String
+  original_ends_with: String
 
   """All values not ending with the given string."""
-  name_not_ends_with: String
-  publicId: String
+  original_not_ends_with: String
+  w200: String
 
   """All values that are not equal to given value."""
-  publicId_not: String
+  w200_not: String
 
   """All values that are contained in given list."""
-  publicId_in: [String!]
+  w200_in: [String!]
 
   """All values that are not contained in given list."""
-  publicId_not_in: [String!]
+  w200_not_in: [String!]
 
   """All values less than the given value."""
-  publicId_lt: String
+  w200_lt: String
 
   """All values less than or equal the given value."""
-  publicId_lte: String
+  w200_lte: String
 
   """All values greater than the given value."""
-  publicId_gt: String
+  w200_gt: String
 
   """All values greater than or equal the given value."""
-  publicId_gte: String
+  w200_gte: String
 
   """All values containing the given string."""
-  publicId_contains: String
+  w200_contains: String
 
   """All values not containing the given string."""
-  publicId_not_contains: String
+  w200_not_contains: String
 
   """All values starting with the given string."""
-  publicId_starts_with: String
+  w200_starts_with: String
 
   """All values not starting with the given string."""
-  publicId_not_starts_with: String
+  w200_not_starts_with: String
 
   """All values ending with the given string."""
-  publicId_ends_with: String
+  w200_ends_with: String
 
   """All values not ending with the given string."""
-  publicId_not_ends_with: String
+  w200_not_ends_with: String
 }
 
-input ChampionWhereUniqueInput {
+input ImageWhereUniqueInput {
   id: ID
 }
 
@@ -245,12 +245,12 @@ Long can represent values between -(2^63) and 2^63 - 1.
 scalar Long
 
 type Mutation {
-  createChampion(data: ChampionCreateInput!): Champion!
-  updateChampion(data: ChampionUpdateInput!, where: ChampionWhereUniqueInput!): Champion
-  deleteChampion(where: ChampionWhereUniqueInput!): Champion
-  upsertChampion(where: ChampionWhereUniqueInput!, create: ChampionCreateInput!, update: ChampionUpdateInput!): Champion!
-  updateManyChampions(data: ChampionUpdateManyMutationInput!, where: ChampionWhereInput): BatchPayload!
-  deleteManyChampions(where: ChampionWhereInput): BatchPayload!
+  createImage(data: ImageCreateInput!): Image!
+  updateImage(data: ImageUpdateInput!, where: ImageWhereUniqueInput!): Image
+  deleteImage(where: ImageWhereUniqueInput!): Image
+  upsertImage(where: ImageWhereUniqueInput!, create: ImageCreateInput!, update: ImageUpdateInput!): Image!
+  updateManyImages(data: ImageUpdateManyMutationInput!, where: ImageWhereInput): BatchPayload!
+  deleteManyImages(where: ImageWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -281,9 +281,9 @@ type PageInfo {
 }
 
 type Query {
-  champions(where: ChampionWhereInput, orderBy: ChampionOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Champion]!
-  champion(where: ChampionWhereUniqueInput!): Champion
-  championsConnection(where: ChampionWhereInput, orderBy: ChampionOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ChampionConnection!
+  images(where: ImageWhereInput, orderBy: ImageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Image]!
+  image(where: ImageWhereUniqueInput!): Image
+  imagesConnection(where: ImageWhereInput, orderBy: ImageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ImageConnection!
 
   """Fetches an object given its ID"""
   node(
@@ -293,5 +293,5 @@ type Query {
 }
 
 type Subscription {
-  champion(where: ChampionSubscriptionWhereInput): ChampionSubscriptionPayload
+  image(where: ImageSubscriptionWhereInput): ImageSubscriptionPayload
 }

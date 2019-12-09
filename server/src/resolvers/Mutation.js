@@ -1,6 +1,6 @@
 const Mutations = {
-  async createChampion(parent, args, ctx, info) {
-    return ctx.db.mutation.createChampion({
+  async createImage(parent, args, ctx, info) {
+    return ctx.db.mutation.createImage({
       data: {
         ...args
       }

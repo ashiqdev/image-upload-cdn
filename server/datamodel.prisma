@@ -1,5 +1,5 @@
-type Champion {
+type Image {
   id: ID! @id
-  name: String!
-  publicId: String!
+  original: String!
+  w200: String!
 }

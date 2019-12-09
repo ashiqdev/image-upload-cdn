@@ -6,6 +6,7 @@ const server = createServer();
 
 server.start(
   {
+    port: 4444,
     cors: {
       credentials: true,
       origin: process.env.FRONTEND_URL
@@ -13,7 +14,7 @@ server.start(
   },
   deets => {
     console.log(
-      `Server is now listening oin port http://localhost:${deets.port}`
+      `Server is now listening on port http://localhost:${deets.port}`
     );
   }
 );

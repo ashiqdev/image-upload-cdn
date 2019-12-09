@@ -1,8 +1,9 @@
 # import * from './generated/prisma.graphql'
 type Mutation {
-  createChampion(name:String!, publicId:String!): Champion!
+  createImage(original:String!, w200:String!): Image!
 }
 
 type Query {
-  champion(where: ChampionWhereUniqueInput!): Champion
+  getImages(where: ImageWhereInput, orderBy: ImageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Image]!
+  getImage(id: ID!): Image!
 }
